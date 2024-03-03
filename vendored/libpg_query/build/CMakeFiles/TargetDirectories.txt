@@ -1,0 +1,3 @@
+/home/town/lingo-db/vendored/libpg_query/build/CMakeFiles/pg_query.dir
+/home/town/lingo-db/vendored/libpg_query/build/CMakeFiles/edit_cache.dir
+/home/town/lingo-db/vendored/libpg_query/build/CMakeFiles/rebuild_cache.dir
