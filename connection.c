@@ -38,7 +38,7 @@ SQLRETURN connToDB(SQLHDBC* dbc) {
 	/* Connect to the MySQL */
 	ret = SQLDriverConnect(*dbc, 
 							NULL, 
-							(SQLCHAR*)"DSN=MySQL_ssb_1;Server=localhost;UID=root;PSW=town1277;", 
+							(SQLCHAR*)"DSN=MySQL_ssb_001;Server=localhost;UID=root;PSW=town1277;", 
 							SQL_NTS, 
 							outstr,
 							sizeof(outstr), 

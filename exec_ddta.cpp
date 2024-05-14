@@ -898,8 +898,8 @@ producePrediction(ddtacontext &context, SQLHDBC& dbc)
 						   );
 
 
-
-			  vector<int> &prediction =
+			  // prediction 用来存 key（存下标）；也可以临时存放位图，然后再转存到下面的 predbit。
+			  vector<int> &prediction =		
 			                 i == 0 ? context.predCustomer  :
 						    (   i == 1 ? context.predSupplier :
 						        (i == 2 ? context.predDwdate  :
@@ -915,7 +915,7 @@ producePrediction(ddtacontext &context, SQLHDBC& dbc)
 					 			 )
 					 	     );
 
-		      //initialize for "0"
+		      // @town: initialize for "0" ---
 			  if(context.isTranslated[i]) {
 			       bimap.left.insert(make_pair("0", 0));
 
@@ -925,8 +925,8 @@ producePrediction(ddtacontext &context, SQLHDBC& dbc)
 
                         GetStringFromDB(stmt, (SQLCHAR*)szData, 1);
 
-
-						BOOST_AUTO(iter, bimap.left.find(szData));
+						// 在左边视图中查找键为 ‘szData’ 的元素，并返回一个迭代器，指向该元素。若找到，iter指向该元素；否则，iter指向容器末尾。
+						BOOST_AUTO(iter, bimap.left.find(szData));	
 
 						if(iter == bimap.left.end( )) {//not in the map
 
@@ -948,7 +948,7 @@ producePrediction(ddtacontext &context, SQLHDBC& dbc)
 				   //printf("###produce <key,value> ok!\n");
 			  }
 			  else {
-				     long predictionData[1] = {1};
+				     long predictionData[1] = {1};		// @town: define a 'long' type array, which length is 1, and initial it with 1.
 
                      while((ret = SQLFetch(stmt)) == SQL_SUCCESS) {
 
