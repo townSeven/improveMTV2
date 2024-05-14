@@ -1,3 +1,6 @@
 build/
 .vscode
 data/
+*.exe
+*.out
+*.json
