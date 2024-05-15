@@ -958,12 +958,12 @@ producePrediction(ddtacontext &context, SQLHDBC& dbc)
 
 					 }
                      
-                     /*int k;
-                     for(k = 0; k < prediction.size(); k++) {
-                    	 printf("%d ", prediction[k]);
-                    	 if(k % 15 == 0) printf("\n");
-                     }*/
-					 //printf("###produce bitmap ok!\n");
+                    //  int k;
+                    //  for(k = 0; k < prediction.size(); k++) {
+                    // 	 printf("%d ", prediction[k]);
+                    // 	 if(k % 15 == 0) printf("\n");
+                    //  }
+					//  printf("###produce bitmap ok!\n");
 			  }//end if
 			  SQLFreeHandle(SQL_HANDLE_STMT, stmt);
 
@@ -1074,7 +1074,7 @@ void *exec_cddta_thread(void * arg){
               flag = true;
 
 			  //@town: 先判断事实表的过滤条件
-			  /*
+			  
 			  if (query < 3) {
 					lo_discount = (mt_arg->pFactTable)->pLOTable[6][i];
 					lo_quantity = (mt_arg->pFactTable)->pLOTable[4][i];
@@ -1101,7 +1101,7 @@ void *exec_cddta_thread(void * arg){
 							break;
 					}
 			  }
-			*/	
+			
 			 
 			  //get foreign key in fact table and judge
 			  for(k = 0;  attrsToGet[k] < 4; k++) {
@@ -1283,7 +1283,7 @@ void exec_cddta_mt(ddtacontext& context, SelectType& selectVar,
 	// GetSystemInfo(&sysInfo);
 
     // int THREAD_NUM = sysInfo.dwNumberOfProcessors - 7;//sysconf(_SC_NPROCESSORS_ONLN);
-	int THREAD_NUM = sysconf(_SC_NPROCESSORS_ONLN) - 7;
+	int THREAD_NUM = sysconf(_SC_NPROCESSORS_ONLN);
 
 	std::vector<thread_args> threads(THREAD_NUM);	//@town: [add] "(THREAD_NUM)"，用于初始化threads向量
 

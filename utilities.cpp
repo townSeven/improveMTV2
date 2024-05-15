@@ -562,7 +562,7 @@ void loadFactTable(TableType& LOTable, runtimeInfoType& runtimeInfo)
 
    char line[512];
 
-   fin.open("/home/town/tblgen/data_sf_0.01/lineorder.tbl");   //loading lineorder table
+   fin.open("/home/town/improveMTV2/data/ssb_001/lineorder.tbl");   //loading lineorder table
 
     if(!fin)
 		cout <<"Can't open data file ";
