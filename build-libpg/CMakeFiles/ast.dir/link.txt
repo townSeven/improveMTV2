@@ -1,0 +1,1 @@
+/usr/bin/c++  -g CMakeFiles/ast.dir/AST.cpp.o -o ast   -L/home/town/improveMTV2/vendored/libpg_query  -Wl,-rpath,/home/town/improveMTV2/vendored/libpg_query -lpg_query 

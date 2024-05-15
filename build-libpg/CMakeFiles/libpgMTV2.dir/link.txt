@@ -1,0 +1,1 @@
+/usr/bin/c++  -g CMakeFiles/libpgMTV2.dir/libpgMTV2.cpp.o CMakeFiles/libpgMTV2.dir/connection.c.o CMakeFiles/libpgMTV2.dir/exec_ddta.cpp.o CMakeFiles/libpgMTV2.dir/parse.cpp.o CMakeFiles/libpgMTV2.dir/resultSet.cpp.o CMakeFiles/libpgMTV2.dir/rewriteSQL.cpp.o CMakeFiles/libpgMTV2.dir/libpg_utils.cpp.o -o libpgMTV2  /usr/lib/x86_64-linux-gnu/libodbc.so 

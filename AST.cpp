@@ -20,9 +20,9 @@ void print_pg_parse_tree2(List* tree) {
 */
 
 int main(int argc, char* argv[]) {
-    //const char* tpch_query2 = "SELECT s_acctbal, s_name, n_name, p_partkey, p_mfgr, s_address, s_phone, s_comment FROM part, supplier, partsupp, nation, region WHERE p_partkey = ps_partkey AND s_suppkey = ps_suppkey AND p_size = 15 AND p_type LIKE '%BRASS' AND s_nationkey = n_nationkey AND n_regionkey = r_regionkey AND r_name = 'EUROPE' AND ps_supplycost = (SELECT min(ps_supplycost) FROM partsupp, supplier, nation, region WHERE p_partkey = ps_partkey AND s_suppkey = ps_suppkey AND s_nationkey = n_nationkey AND n_regionkey = r_regionkey AND r_name = 'EUROPE') ORDER BY s_acctbal DESC, n_name, s_name, p_partkey;";
     int arg = atoi(argv[1]);
-    int query = 0;
+    //std::cout << "input query is: " << arg << std::endl;
+    int query = -1;
 
     switch (arg)
     {
@@ -40,10 +40,12 @@ int main(int argc, char* argv[]) {
     case 42:    query = 11; break;
     case 43:    query = 12; break;
     
-    default:    query = 0; break;
+    default:    query = -1; break;
     }
-    
-    if(query = 0)   std::cout << "no such query in ssb!" << std::endl;
+ 
+    if(query < 0)   
+        std::cout << "no such query in ssb!" << std::endl;
+
     const char* ssb_query = pSQL[query];
 
     void* ctx = pg_query_parse_init();

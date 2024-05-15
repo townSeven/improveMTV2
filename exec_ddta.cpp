@@ -1075,7 +1075,7 @@ void *exec_cddta_thread(void * arg){
 
 			  //@town: 先判断事实表的过滤条件
 			  
-			  if (query < 3) {
+			  if (query >= 0 && query < 3) {
 					lo_discount = (mt_arg->pFactTable)->pLOTable[6][i];
 					lo_quantity = (mt_arg->pFactTable)->pLOTable[4][i];
 

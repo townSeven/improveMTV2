@@ -1,0 +1,4 @@
+/home/town/improveMTV2/build-libpg/CMakeFiles/ast.dir
+/home/town/improveMTV2/build-libpg/CMakeFiles/libpgMTV2.dir
+/home/town/improveMTV2/build-libpg/CMakeFiles/edit_cache.dir
+/home/town/improveMTV2/build-libpg/CMakeFiles/rebuild_cache.dir
